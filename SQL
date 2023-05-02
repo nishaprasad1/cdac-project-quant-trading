@@ -1,0 +1,31 @@
+create database algoProject;
+use algoProject;
+create table orb_tbl(id int primary key auto_increment, token bigint, comp_name varchar(15), open_price double, close_price double,high_price double,low_price double,record_date date);
+select * from orb_tbl;
+insert into orb_tbl values(1,408065,"NSE:INFY",1486.75,1479.30,1489.8,1473.0,"2023-03-03");
+
+
+
+=====================================SIGNALS TABLE=====================================
+show databases ;
+use algotrading ;
+create table signals(
+signalId int(30) primary key,
+companyName varchar(50),
+companyId double,
+strategyName varchar(50),
+generateDate date,
+buy double,
+sell double,
+signalType varchar(10),
+stopLoss double
+);
+
+select * from signals;
+INSERT INTO signals  VALUES(5,'TCS','0987','ORB','2023/03/06',100,102,'buy',98);
+drop  table signals;
+
+
+===============================STRATEGY ORG==============================
+create table strategy_org(company_token bigint primary key,company_name varchar(50),isEnabled bool);
+select * from strategy_org;
